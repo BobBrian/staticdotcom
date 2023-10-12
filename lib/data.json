@@ -1,0 +1,7 @@
+{
+    "todos":[
+        {"title": "Buy Milk", "body":"Item 1", "author":"Chibuikem", "id":1},
+        {"title": "Shave Cat", "body":"Item 2", "author":"Leo", "id":2},
+        {"title": "Burndown House", "body":"Item 3", "author":"Chibuikem", "id":3}
+    ]
+}

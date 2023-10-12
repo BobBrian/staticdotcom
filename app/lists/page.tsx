@@ -2,15 +2,15 @@
 //But this specifically focuses on lists
 "use client"
 import React from 'react'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 //This is here to define our itmes
-interface Todo {
-    title: string,
-    body: string,
-    author: string,
-    id: number
-}
+// interface Todo {
+//     title: string,
+//     body: string,
+//     author: string,
+//     id: number
+// }
 
 
 export default function List() {
@@ -21,10 +21,19 @@ export default function List() {
         {title: "Burndown House", body:"Item 3", author:"Alex", id:3}
     ])
 
-    // const handelOnclick = (id) => {
-    
-    
-    // }
+    //This is a temporary fix to the error
+    //I am more invested in seeing how I can rectify it by using the Interface Object
+    //It works but it is only temporary delete
+    const handelDelete = (id:any) => {
+        const newTodo = todos.filter(todo =>todo.id !== id)
+        setTodo(newTodo)
+    }
+
+    //Code to run everytime the code is rerendered
+    useEffect(() =>{
+        console.log("'Use Effect Ran")
+        console.log(todos)
+    })
 
   return (
     <div>
@@ -37,7 +46,7 @@ export default function List() {
                 <p className="text-center">Written by {todo.author}</p>
 
                 <button className="text-center inline-flex items-center px-3 py-2 text-sm font-medium 
-                text-center text-white bg-blue-700 rounded-lg">Click Me</button>
+                text-center text-white bg-blue-700 rounded-lg" onClick={() => handelDelete(todo.id)}>Click Me</button>
 
                 </div>
              
