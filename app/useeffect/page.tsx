@@ -35,9 +35,7 @@ export default function UseEffectFetch() {
 
                 <button className="text-center inline-flex items-center px-3 py-2 text-sm font-medium 
                 text-center text-white bg-blue-700 rounded-lg" >Click Me</button>
-
                 </div>
-             
             </div>
         ))}
     </div>

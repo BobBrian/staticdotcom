@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react'
+import { redirect } from 'next/navigation'
+
 
 export default function PostForm() {
 
@@ -21,15 +23,16 @@ export default function PostForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(todo)
         }).then(() => {
-        console.log('new blog added');
+         console.log('new blog added');
         })
 
     }
 
+//
   return (
     <div>
         <h1 className='text-4xl font-bold underline'>Json Server POST form Template</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
             <div className="mb-6">
                 <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                 <input value={title} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
